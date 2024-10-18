@@ -33,8 +33,11 @@ public class Recipe {
     @Column(name = "base_multiplier_unit", nullable = true)
     private String baseMultiplierUnit;
     
-    @OneToMany(mappedBy = "recipe")
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL)
     private List<RecipeDose> doses;
+
+    @OneToOne(mappedBy = "recipe", cascade = CascadeType.ALL)
+    private RecipeMetadata metadata;
     
     // Getters and Setters
 }

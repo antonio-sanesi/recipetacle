@@ -28,7 +28,7 @@ public class RecipeMetadata {
     @Column(name = "cooking_time", nullable = true)
     private Integer cookingTime;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "recipe_id")
     private Recipe recipe;
     
