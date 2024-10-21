@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: recipetacle
+
+  datasource:
+    # i have a postgres db named postgres with a schema named recipetacle
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=recipetacle
+    username: recipetacle
+    password: recipetacle
