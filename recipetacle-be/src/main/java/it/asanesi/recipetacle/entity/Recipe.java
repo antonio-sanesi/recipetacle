@@ -8,14 +8,15 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "recipetacle.recipe")
+@Table(name = "recipe")
+@SequenceGenerator(name = "recipe_seq", sequenceName = "recipe_seq", allocationSize = 1)
 @Getter
 @Setter
 @NoArgsConstructor
 public class Recipe {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "recipe_seq")
     private Long id;
 
     @Column(name = "name", nullable = false)

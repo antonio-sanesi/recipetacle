@@ -6,15 +6,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "recipetacle.recipe_metadata")
+@Table(name = "recipe_metadata")
 @Getter
 @Setter
 @NoArgsConstructor
 public class RecipeMetadata {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="recipe_id", nullable = false)
     private Long id;
+
+    @OneToOne
+    @JoinColumn(name = "recipe_id")
+    private Recipe recipe;
 
     @Column(name = "difficulty", nullable = true)
     private Integer difficulty;
@@ -27,10 +31,4 @@ public class RecipeMetadata {
     
     @Column(name = "cooking_time", nullable = true)
     private Integer cookingTime;
-
-    @OneToOne
-    @JoinColumn(name = "recipe_id")
-    private Recipe recipe;
-    
-    // Getters and Setters
 }

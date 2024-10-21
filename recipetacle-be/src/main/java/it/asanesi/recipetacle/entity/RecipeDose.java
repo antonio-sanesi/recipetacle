@@ -6,14 +6,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "recipetacle.doses")
+@Table(name = "doses")
+@SequenceGenerator(name = "dose_seq", sequenceName = "dose_seq", allocationSize = 1)
 @Getter
 @Setter
 @NoArgsConstructor
 public class RecipeDose {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dose_seq")
     private Long id;
     
     @ManyToOne
