@@ -15,6 +15,7 @@ public class RecipeDose {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dose_seq")
+    @Column(name = "id", nullable = false)
     private Long id;
     
     @ManyToOne
