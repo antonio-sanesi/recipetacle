@@ -43,4 +43,9 @@ public class RecipeServiceImpl implements RecipeService {
                 .map(recipe -> modelMapper.map(recipe, RecipeDto.class))
                 .orElse(null);
     }
+
+    @Override
+    public void delete(Long id) {
+        recipeRepository.deleteById(id);
+    }
 }

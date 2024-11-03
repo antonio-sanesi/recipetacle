@@ -48,4 +48,12 @@ public class RecipeController {
         return recipeService.save(recipeDto);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteRecipe(
+            @PathVariable Long id
+    ) {
+        recipeService.delete(id);
+    }
+
+
 }
