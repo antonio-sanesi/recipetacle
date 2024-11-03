@@ -39,4 +39,13 @@ public class RecipeController {
         return recipeService.findById(id);
     }
 
+    @PutMapping("/{id}")
+    public RecipeDto updateRecipe(
+            @PathVariable Long id,
+            @RequestBody RecipeDto recipeDto
+    ) {
+        recipeDto.setId(id);
+        return recipeService.save(recipeDto);
+    }
+
 }
