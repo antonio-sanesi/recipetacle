@@ -10,3 +10,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/postgres?currentSchema=recipetacle
     username: recipetacle
     password: recipetacle
+
+cors:
+  allowed:
+    origins: ${CORS_ALLOWED_ORIGINS:*}
