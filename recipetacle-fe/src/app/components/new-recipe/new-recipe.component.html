@@ -1,0 +1,51 @@
+<div>
+    <!-- title -->
+    <div class="mb-3">
+        <label for="title" class="form-label">Titolo ricetta:</label>
+        <input
+          id="title" class="form-control" placeholder="Titolo ricetta"
+          [(ngModel)]="title"
+        />
+    </div>
+
+    <!-- image -->
+
+    <!-- description -->
+    <div class="mb-3">
+        <label for="desc" class="form-label">Descrizione:</label>
+        <textarea
+          id="desc"
+          class="form-control"
+          placeholder="Descrizione"
+          [(ngModel)]="description"
+          rows="3"
+        ></textarea>
+    </div>
+
+    <!-- ingredients -->
+    <div>
+        <label class="form-label">Ingredienti:</label>
+        <div id="dose-selector">
+            <label class="form-label" for="dose-multiplier">Dosi per:</label>
+            <input
+              id="dose-multiplier"
+              type="number"
+              class="form-control"
+              placeholder="6"
+              [(ngModel)]="doseMultiplier"
+            />
+            <input
+              id="dose-unit"
+              type="text"
+              class="form-control"
+              placeholder="porzioni"
+              [(ngModel)]="doseUnit"
+            />
+        </div>
+    </div>
+
+    <!-- steps -->
+
+  <!-- save button -->
+  <button type="button" class="btn btn-primary" (click)="onSave()">Salva</button>
+</div>
