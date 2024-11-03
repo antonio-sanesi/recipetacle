@@ -6,10 +6,9 @@ spring:
     name: recipetacle
 
   datasource:
-    # i have a postgres db named postgres with a schema named recipetacle
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=recipetacle
-    username: recipetacle
-    password: recipetacle
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/postgres?currentSchema=recipetacle}
+    username: ${DB_USER:recipetacle}
+    password: ${DB_PASS:recipetacle}
 
 cors:
   allowed:
